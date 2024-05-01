@@ -10,12 +10,14 @@ html {
 
 .page {
   inline-size: 1200px;
-  
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
 }
 
 h1,
@@ -42,9 +44,9 @@ ol {
   grid-template-columns: 711px 399px;
   align-items: end;
   gap: 30px;
-  margin-block-start: 133px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
+  
 }
 
 .result {
