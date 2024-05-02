@@ -41,12 +41,15 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: 711px 399px;
+  grid-template-columns: 711px auto;
   align-items: end;
+
+  /*display: flex;
+  justify-content: flex-start;*/
+
   gap: 30px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
-  
 }
 
 .result {
@@ -84,13 +87,17 @@ ol {
 .search-form__textfield {
   appearance: none;
   inline-size: 100%;
-  color: rgb(255 255 255 / 0.7);
   font-size: inherit;
   font-family: inherit;
+  color: inherit;
   background-color: transparent;
   border: none;
   border-block-end: solid white 1px;
   border-block-start: solid white 1px;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
 }
 
 .search-form__textfield:focus {
@@ -102,7 +109,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -140,6 +147,7 @@ ol {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
+  font-weight: 700;
   background-color: transparent;
   border: solid white 1px;
   block-size: 34px;
@@ -176,14 +184,16 @@ ol {
 
 .content__details {
   display: grid;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .content__list {
   position: relative;
   display: grid;
   block-size: 298px;
+  inline-size: 398px;
   overflow-y: auto;
-  overflow-x: hidden;
   gap: 30px;
 }
 
@@ -191,6 +201,7 @@ ol {
   display: block;
   color: white;
   text-decoration: none;
+  inline-size: 378px;
 }
 
 .content__card-link:focus {
@@ -243,11 +254,15 @@ ol {
 }
 
 .content__video-card-title {
+  inline-size: 200px;
   font-family: Oswald, sans-serif;
   text-transform: uppercase;
   font-size: 30px;
   line-height: 100%;
   margin-block-end: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -256,7 +271,7 @@ ol {
 
 .content__video-card-thumbnail {
   display: block;
-  inline-size: 194px;
+  inline-size: 178px;
   block-size: 103px;
   object-fit: cover;
   object-position: center;
